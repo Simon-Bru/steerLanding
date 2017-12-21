@@ -14,5 +14,6 @@ const i18n = new VueI18n({
 new Vue({
   el: '#app',
   render: h => h(App),
-  i18n
+  i18n,
+  components: { App }
 })
