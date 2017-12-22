@@ -1,0 +1,15 @@
+$pink:      #FF003D;
+$black:     #2d004c;
+$blue:      #4798FF;
+$green:     #00BF39;
+$yellow:    #F7DF00;
+
+@font-face {
+    font-family: "Champagne";
+    src:    url("../fonts/Champagne_Limousines.woff") format("woff"),
+            url("../fonts/Champagne_Limousines.ttf") format("ttf");
+}
+
+body {
+    font-family: 'Champagne';
+}

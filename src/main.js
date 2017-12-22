@@ -2,6 +2,7 @@ import Vue      from 'vue'
 import VueI18n  from 'vue-i18n'
 import App      from './App.vue'
 import messages from './locale'
+import './assets/style/style.scss'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)

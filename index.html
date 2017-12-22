@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <title>S T E E R</title>
-    <link rel="icon" href="/src/assets/logo-black.ico" />
+    <link rel="icon" href="/src/assets/images/logo-black-no-border.ico" />
+
+    <link rel="stylesheet" href="/node_modules/material-design-icons/iconfont/material-icons.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,145 +58,26 @@
             <path class="cls-5" d="M689.9,420.7a40.86,40.86,0,0,1-11.3-1.7,45.31,45.31,0,0,1-5.7-2.3A35.85,35.85,0,0,1,660,405.8a27.62,27.62,0,0,1-3.7-6.1.37.37,0,0,1,.2-.5c.2-.1.4-.1.5.2.9,1.6,1.8,3.2,2.9,4.8V362.5a47.07,47.07,0,0,0-2.9,4.8c0,.1-.2.2-.3.2h-.2a.48.48,0,0,1-.2-.6,52.92,52.92,0,0,1,3.6-6A38.74,38.74,0,0,1,672.8,350a34.05,34.05,0,0,1,9.1-3.2,38.7,38.7,0,0,1,8-.8c9.9-.2,18.5.9,18.5,1.1s-12.7-.3-18.5-.3c-.5,0-1.7,0-3.3.1-1.3.1-2.5.3-3.8.5v28.1h14.4a.4.4,0,0,1,0,.8H682.8v42.9c1.3.2,2.5.4,3.8.5,1.6.1,2.9.1,3.3.1,13.6,0,20.7,0,20.7.2S700.2,421,689.9,420.7Z" transform="translate(-656.01 -345.73)"/>
           </svg>
         </div>
+        <div class="sub_text">
+          <h1 class="m112">Plan the perfect stay at 2024 Olympic Games</h1>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
       </div>
     </div>
     <style>
-    @-webkit-keyframes moveT {
-      50% {
-        transform: translate(-30px, 0px);
-        -moz-transform: translate(-30px, 0px);
-        -ms-transform: translate(-30px, 0px);
-        -webkit-transform: translate(-30px, 0px);
-        -o-transform: translate(-30px, 0px);
-      }
-      100% {
-        transform: translate(-30px, -70px);
-        -moz-transform: translate(-30px, -70px);
-        -ms-transform: translate(-30px, -70px);
-        -webkit-transform: translate(-30px, -70px);
-        -o-transform: translate(-30px, -70px);
-      }
+    body {
+      overflow: hidden;
     }
 
-    @-moz-keyframes moveT {
-      50% {
-        transform: translate(-30px, 0px);
-        -moz-transform: translate(-30px, 0px);
-        -ms-transform: translate(-30px, 0px);
-        -webkit-transform: translate(-30px, 0px);
-        -o-transform: translate(-30px, 0px);
-      }
-      100% {
-        transform: translate(-30px, -70px);
-        -moz-transform: translate(-30px, -70px);
-        -ms-transform: translate(-30px, -70px);
-        -webkit-transform: translate(-30px, -70px);
-        -o-transform: translate(-30px, -70px);
-      }
+    #app {
+      background-color: #fff;
     }
-
-    @-o-keyframes moveT {
-      50% {
-        transform: translate(-30px, 0px);
-        -moz-transform: translate(-30px, 0px);
-        -ms-transform: translate(-30px, 0px);
-        -webkit-transform: translate(-30px, 0px);
-        -o-transform: translate(-30px, 0px);
-      }
-      100% {
-        transform: translate(-30px, -70px);
-        -moz-transform: translate(-30px, -70px);
-        -ms-transform: translate(-30px, -70px);
-        -webkit-transform: translate(-30px, -70px);
-        -o-transform: translate(-30px, -70px);
-      }
+    #splash:before {
+      content: "";
+      vertical-align: middle;
+      padding-top: 100%;
+      height:0;
     }
-
-    @keyframes moveT {
-      50% {
-        transform: translate(-30px, 0px);
-        -moz-transform: translate(-30px, 0px);
-        -ms-transform: translate(-30px, 0px);
-        -webkit-transform: translate(-30px, 0px);
-        -o-transform: translate(-30px, 0px);
-      }
-      100% {
-        transform: translate(-30px, -70px);
-        -moz-transform: translate(-30px, -70px);
-        -ms-transform: translate(-30px, -70px);
-        -webkit-transform: translate(-30px, -70px);
-        -o-transform: translate(-30px, -70px);
-      }
-    }
-
-    @-webkit-keyframes moveE {
-      50% {
-        transform: translate(30px, 0px);
-        -moz-transform: translate(30px, 0px);
-        -ms-transform: translate(30px, 0px);
-        -webkit-transform: translate(30px, 0px);
-        -o-transform: translate(30px, 0px);
-      }
-      100% {
-        transform: translate(30px, -70px);
-        -moz-transform: translate(30px, -70px);
-        -ms-transform: translate(30px, -70px);
-        -webkit-transform: translate(30px, -70px);
-        -o-transform: translate(30px, -70px);
-      }
-    }
-
-    @-moz-keyframes moveE {
-      50% {
-        transform: translate(30px, 0px);
-        -moz-transform: translate(30px, 0px);
-        -ms-transform: translate(30px, 0px);
-        -webkit-transform: translate(30px, 0px);
-        -o-transform: translate(30px, 0px);
-      }
-      100% {
-        transform: translate(30px, -70px);
-        -moz-transform: translate(30px, -70px);
-        -ms-transform: translate(30px, -70px);
-        -webkit-transform: translate(30px, -70px);
-        -o-transform: translate(30px, -70px);
-      }
-    }
-
-    @-o-keyframes moveE {
-      50% {
-        transform: translate(30px, 0px);
-        -moz-transform: translate(30px, 0px);
-        -ms-transform: translate(30px, 0px);
-        -webkit-transform: translate(30px, 0px);
-        -o-transform: translate(30px, 0px);
-      }
-      100% {
-        transform: translate(30px, -70px);
-        -moz-transform: translate(30px, -70px);
-        -ms-transform: translate(30px, -70px);
-        -webkit-transform: translate(30px, -70px);
-        -o-transform: translate(30px, -70px);
-      }
-    }
-
-    @keyframes moveE {
-      50% {
-        transform: translate(30px, 0px);
-        -moz-transform: translate(30px, 0px);
-        -ms-transform: translate(30px, 0px);
-        -webkit-transform: translate(30px, 0px);
-        -o-transform: translate(30px, 0px);
-      }
-      100% {
-        transform: translate(30px, -70px);
-        -moz-transform: translate(30px, -70px);
-        -ms-transform: translate(30px, -70px);
-        -webkit-transform: translate(30px, -70px);
-        -o-transform: translate(30px, -70px);
-      }
-    }
-
 
     #splash {
       position: absolute;
@@ -208,27 +91,43 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 1s linear 2s;
-      -moz-transition: all 1s linear 2s;
-      -o-transition: all 1s linear 2s;
-      -webkit-transition: all 1s linear 2s;
+      transition: background-color 1s linear 1.5s;
+      -moz-transition: background-color 1s linear 1.5s;
+      -o-transition: background-color 1s linear 1.5s;
+      -webkit-transition: background-color 1s linear 1.5s;
     }
     #splash .steer {
-      /* height: 50%; */
-      /* width: 100%; */
       text-align: center;
-      position: relative;
+      position: absolute;
+      color: #fff;
     }
     #splash .steer .up {
       height: 70px;
     }
+    #splash .steer .down {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      margin-top: 70px;
+      transition: margin 1s ease-out .5s;
+      -moz-transition: margin 1s ease-out .5s;
+      -o-transition: margin 1s ease-out .5s;
+      -webkit-transition: margin 1s ease-out .5s;
+    }
+    #splash.loaded .steer .down {
+      margin-top: 0;
+    }
+
     #splash .steer svg {
       width: 70px;
       height: 70px;
-      transition: transform 1s ease-out;
-      -moz-transition: -moz-transform 1s ease-out;
-      -o-transition: -o-transform 1s ease-out;
-      -webkit-transition: -webkit-transform 1s ease-out;
+      transition: transform .5s ease-out;
+      -moz-transition: -moz-transform .5s ease-out;
+      -o-transition: -o-transform .5s ease-out;
+      -webkit-transition: -webkit-transform .5s ease-out;
+    }
+    #splash .steer svg path {
+      fill: #fff;
     }
     #splash.loaded {
       background-color: rgba(0, 0, 0, 0.8);
@@ -248,14 +147,30 @@
       -o-transform: translateX(70px);
     }
     #splash.loaded .steer svg#T {
-      animation: moveT 2s forwards;
+      transform: translate(-30px, 0px);
+      -moz-transform: translate(-30px, 0px);
+      -ms-transform: translate(-30px, 0px);
+      -webkit-transform: translate(-30px, 0px);
+      -o-transform: translate(-30px, 0px);
     }
     #splash.loaded .steer svg#E2 {
-      animation: moveE 2s forwards;
+      transform: translate(30px, 0px);
+      -moz-transform: translate(30px, 0px);
+      -ms-transform: translate(30px, 0px);
+      -webkit-transform: translate(30px, 0px);
+      -o-transform: translate(30px, 0px);
     }
-
-
-
+    #splash .steer .sub_text {
+      opacity: 0;
+      transition: opacity .5s ease-out 2s;
+      -moz-transition: opacity .5s ease-out 2s;
+      -o-transition: opacity .5s ease-out 2s;
+      -webkit-transition: opacity .5s ease-out 2s;
+    }
+    #splash.loaded .steer .sub_text {
+      opacity: 1;
+    }
+    
     </style>
     <script src="/dist/build.js"></script>
   </body>

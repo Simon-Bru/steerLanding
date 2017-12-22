@@ -11,7 +11,7 @@ export default {
   name: 'app',
   mounted: function() {
     setTimeout(() => {
-      this._self.$el.nextElementSibling.classList.value += 'loaded';
+      this._self.$el.nextElementSibling.classList.value += ' loaded';
     }, 1000);
   },
   components: {

@@ -11,7 +11,7 @@ export default {
 
 <style lang="scss">
     #home {
-        background: url('../assets/paris-bg.jpg');
+        background: url('../assets/images/paris-bg.jpg');
         position: absolute;
         top: 0;
         left: 0;
