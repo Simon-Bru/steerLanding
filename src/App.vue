@@ -22,8 +22,10 @@
         event.deltaY < 0 ? this.goBack() : this.goForward()
       },
       goForward () {
-        this.$router.push(routes[step].path);
-        step++
+        if(step < routes.length) {
+          this.$router.push(routes[step].path);
+          step++
+        }
       },
       goBack () {
         if(window.history.length > 1) {
