@@ -1,5 +1,5 @@
 {
-  "name": "testlanding",
+  "name": "steerlanding",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "Simon Bruguerolle <simon.bruguerolle@hotmail.fr>",
@@ -13,7 +13,8 @@
     "animejs": "^2.2.0",
     "material-design-icons": "^3.0.1",
     "vue": "^2.5.11",
-    "vue-i18n": "^7.3.3"
+    "vue-i18n": "^7.3.3",
+    "vue-router": "^3.0.1"
   },
   "browserslist": [
     "> 1%",

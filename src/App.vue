@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <home-component></home-component>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HomeComponent from './components/Home'
 
 export default {
   name: 'app',
@@ -13,9 +12,6 @@ export default {
     setTimeout(() => {
       this._self.$el.nextElementSibling.classList.value += ' loaded';
     }, 1000);
-  },
-  components: {
-    HomeComponent
   }
 }
 </script>

@@ -1,20 +1,30 @@
-import Vue      from 'vue'
-import VueI18n  from 'vue-i18n'
-import App      from './App.vue'
-import messages from './locale'
+import Vue            from 'vue'
+import VueI18n        from 'vue-i18n'
+import VueRouter      from 'vue-router'
+import { routes }     from './router'
+import messages       from './locale'
 import './assets/style/style.scss'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
+Vue.use(VueRouter)
 
 const i18n = new VueI18n({
   locale: window.navigator.language,
   messages
 })
 
+const router = new VueRouter({
+  mode: 'history',
+  routes
+})
+
+router.replace({ path: '/', redirect: '/' })
+
 new Vue({
   el: '#app',
   render: h => h(App),
   i18n,
+  router,
   components: { App }
 })
