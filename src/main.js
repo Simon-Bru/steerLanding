@@ -1,6 +1,7 @@
 import Vue            from 'vue'
 import VueI18n        from 'vue-i18n'
 import VueRouter      from 'vue-router'
+import App            from './App'
 import { routes }     from './router'
 import messages       from './locale'
 import './assets/style/style.scss'
