@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="dark-bg full-screen">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -42,13 +44,16 @@
 
 <style lang="scss">
 #app {
-    background: url('./assets/images/paris-bg.jpg');
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+  @extend .full-screen;
+  background: url('./assets/images/paris-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.full-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
