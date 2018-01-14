@@ -171,6 +171,7 @@
 
     #splash.loaded.reveal {
       height: 110px;
+      cursor: pointer;
     }
 
     #splash.loaded.reveal .sub_text {
@@ -188,7 +189,8 @@
       let splashed = false;
       window.addEventListener('wheel', function(event) {
         if(!splashed) {
-          document.getElementById('splash').classList.add('reveal');
+          let splash = document.getElementById('splash');
+          splash.classList.add('reveal');
         }
       });
     </script>
