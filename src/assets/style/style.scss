@@ -10,6 +10,10 @@ $yellow:    #F7DF00;
             url("../fonts/Champagne_Limousines.ttf") format("ttf");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Champagne';
 }
@@ -21,3 +25,12 @@ body {
 .dark-bg {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+// Route transition
+.slide-enter-active, .slide-leave-active {
+    transition: opacity .5s
+}
+.slide-enter, .slide-leave-to {
+    opacity: 0
+}
+  
