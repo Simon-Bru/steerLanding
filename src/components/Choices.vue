@@ -40,7 +40,7 @@ export default {
         text-align: left;
 
         label {
-            font-size: 13px;
+            font-size: 16px;
             padding-bottom: 2px;
         }
     }
@@ -60,6 +60,7 @@ export default {
             color: #fff;
             border-radius: 50px;
             background: #FF0049;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
             i {
                 font-size: 35px;
