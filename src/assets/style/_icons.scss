@@ -1,0 +1,38 @@
+// Icons
+// -------------------------
+
+
+[data-icons8]:before,
+.icons8-acrobatics:before,
+.icons8-attack:before,
+.icons8-basketball-ball:before,
+.icons8-cyclist:before,
+.icons8-dumbbell:before,
+.icons8-fight-gloves:before,
+.icons8-golf-ball:before,
+.icons8-handball:before,
+.icons8-rower-in-canoe:before,
+.icons8-rugby:before,
+.icons8-running-person:before,
+.icons8-soccer-ball:before,
+.icons8-soccer-ball-outline:before,
+.icons8-swimming:before,
+{ @include icons8-font; }
+
+[data-icons8]:before { content: attr(data-icons8); }
+
+.icons8-acrobatics:before { content: $icons8-var-acrobatics; }
+.icons8-attack:before { content: $icons8-var-attack; }
+.icons8-basketball-ball:before { content: $icons8-var-basketball-ball; }
+.icons8-cyclist:before { content: $icons8-var-cyclist; }
+.icons8-dumbbell:before { content: $icons8-var-dumbbell; }
+.icons8-fight-gloves:before { content: $icons8-var-fight-gloves; }
+.icons8-golf-ball:before { content: $icons8-var-golf-ball; }
+.icons8-handball:before { content: $icons8-var-handball; }
+.icons8-rower-in-canoe:before { content: $icons8-var-rower-in-canoe; }
+.icons8-rugby:before { content: $icons8-var-rugby; }
+.icons8-running-person:before { content: $icons8-var-running-person; }
+.icons8-soccer-ball:before { content: $icons8-var-soccer-ball; }
+.icons8-soccer-ball-outline:before { content: $icons8-var-soccer-ball-outline; }
+.icons8-swimming:before { content: $icons8-var-swimming; }
+

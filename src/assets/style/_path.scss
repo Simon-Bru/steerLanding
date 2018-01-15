@@ -1,0 +1,21 @@
+// Font paths
+// -------------------------
+
+@font-face {
+  font-family: "steer";
+  src: url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.eot");
+  src: url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.woff2") format("woff2"),
+       url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.woff") format("woff"),
+       url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.ttf") format("truetype"),
+       url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.svg#steer") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "steer";
+    src: url("../fonts/steer_2b1cb4276683d60bbab6009afa00827f.svg#steer") format("svg");
+  }
+}

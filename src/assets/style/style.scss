@@ -4,6 +4,8 @@ $blue:      #4798FF;
 $green:     #00BF39;
 $yellow:    #F7DF00;
 
+@import "styles.scss";
+
 @font-face {
     font-family: "Champagne";
     src:    url("../fonts/Champagne_Limousines.woff") format("woff"),
@@ -18,12 +20,36 @@ body {
     font-family: 'Champagne';
 }
 
+h1 {
+    font-size: 35px;
+}
+
+p {
+    font-size: 25px;
+    max-width: 60%;
+}
+
+.flex {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */  
+}
+
 .pointer {
     cursor: pointer;
 }
 
 .dark-bg {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.descContainer {
+    color: #fff;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
 // Route transition
