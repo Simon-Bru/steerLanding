@@ -5,10 +5,12 @@ module.exports = {
             title:  'Save your olympic performances',
             desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
                     '',
+            title2: 'Save your interests',
+            desc2:  'Steer will only propose you for events you\'ll love.',        
             search: 'Search a sport'
         },
         message2: {
-            title:  '',
+            title:  'Plan your journey',
             desc:   ''
         }
     },
@@ -22,8 +24,9 @@ module.exports = {
             search: 'Rechercher un sport'
         },
         message2: {
-            title:  '',
-            desc:   ''
+            title:  'Planifiez vos journées',
+            desc:   'Choisissez les activités auquelles vous souhaitez participer et Steer organise '+
+                    'votre parcours.'
         }
     }
 }

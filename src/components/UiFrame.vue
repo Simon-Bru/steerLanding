@@ -4,13 +4,15 @@
             <img src="../assets/images/transparent.png" alt="transparent background">
             <div class="screen" v-bind:class="{ 'choices': step == 0 }">
                 <choices v-if="step == 0"></choices>
+                <activity-map v-if="step == 1"></activity-map>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import Choices from './Choices';
+import Choices      from './Choices';
+import ActivityMap  from './ActivityMap';
 
 export default {
     name: 'UiFrame',
@@ -24,7 +26,8 @@ export default {
         }
     },
     components: {
-        Choices
+        Choices,
+        ActivityMap
     }
 }
 </script>

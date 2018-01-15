@@ -28,6 +28,9 @@ export default {
     grid-auto-rows: 100%;
     padding-bottom: 20px;
     height:100%;
-    text-align: left;
+
+    ui-frame {
+        text-align: left;
+    }
 }
 </style>
