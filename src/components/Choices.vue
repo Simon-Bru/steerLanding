@@ -26,6 +26,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/style/_colors.scss";
+
 #Choices {
     width: 100%;
     height: 100%;
@@ -33,7 +35,7 @@ export default {
 
     .search-container {
         padding-top: 40%;
-        border-bottom: 1px #FF0049 solid;
+        border-bottom: 1px $pink solid;
         margin-right: 10px;
         margin-left: 10px;
 
@@ -49,23 +51,32 @@ export default {
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        
+        flex-flow: row wrap;
+        margin-top: 10%;
 
         span {
-            width: 60px;
-            height: 60px;
-            margin: 20px 10px 20px 10px;
+            flex-grow: 1;
+            width: 20%;
+
+            margin: 3% 3% 3% 3%;
             justify-content: center;
             align-items: center;
             color: #fff;
             border-radius: 50px;
-            background: #FF0049;
+            background: $pink;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+            
             i {
-                font-size: 35px;
+                font-size: 200%;
             }
         }
+
+            span:before{
+                content: "";
+                display: block;
+                padding-top: 100%;
+            }
+
     }
 }
 </style>
