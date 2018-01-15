@@ -34,7 +34,6 @@ export default {
 #Frame {
     width:100%;
     height:100%;
-    text-align: right;
 
     .ui-frame {
         display:inline-block;
