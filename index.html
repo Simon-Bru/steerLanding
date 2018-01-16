@@ -184,19 +184,29 @@
 
     </style>
     <script type='text/javascript'>
+      let splashed = false;
+    
       window.onload = function() {
+   
         document.getElementById('start').addEventListener('click', function() {
-          window.dispatchEvent(new WheelEvent('wheel', { deltaY: 10 }));
+          splashed = true;
+
+          splash.classList.add('reveal');
+          
+          setTimeout(() => {
+            window.dispatchEvent(new WheelEvent('wheel', { deltaY: 10 }));
+          }, 500);
         });
       }
 
-      let splashed = false;
       window.addEventListener('wheel', function(event) {
-        if(!splashed) {
-          let splash = document.getElementById('splash');
-          splash.classList.add('reveal');
-        }
-      });
+          if(!splashed) {
+            event.stopImmediatePropagation();
+            splashed = true;
+            document.getElementById('start').click();
+          }
+        });
+
     </script>
     
     
