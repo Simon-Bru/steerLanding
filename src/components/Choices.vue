@@ -1,6 +1,7 @@
 <template>
   <div id="Choices">
         <div class="search-container">
+            <span id="text-editor">|</span>
             <label v-html="$t('message1.search')"></label>
         </div>
         <div class="sports flex">
@@ -28,6 +29,15 @@ export default {
 <style lang="scss">
 @import "../assets/style/_colors.scss";
 
+@keyframes clignote {
+    0%, 39% {
+        opacity: 0;
+    }
+    40%, 100% {
+        opacity: 1;
+    }
+}
+
 #Choices {
     width: 100%;
     height: 100%;
@@ -44,6 +54,13 @@ export default {
         label {
             font-size: 16px;
             padding-bottom: 2px;
+        }
+
+        #text-editor {
+            opacity: 0;
+            animation-name: clignote;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
         }
     }
 
@@ -70,11 +87,11 @@ export default {
             }
         }
 
-            span:before{
-                content: "";
-                display: block;
-                padding-top: 100%;
-            }
+        span:before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
 
     }
 }
