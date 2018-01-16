@@ -55,19 +55,18 @@ export default {
         margin-top: 10%;
 
         span {
-            flex-grow: 1;
-            width: 20%;
+            width: 25%;
 
             margin: 3% 3% 3% 3%;
             justify-content: center;
             align-items: center;
             color: #fff;
-            border-radius: 50px;
+            border-radius: 100%;
             background: $pink;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
             
             i {
-                font-size: 200%;
+                font-size: 5vh;
             }
         }
 
