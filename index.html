@@ -185,27 +185,29 @@
     </style>
     <script type='text/javascript'>
       let splashed = false;
-    
-      window.onload = function() {
-   
-        document.getElementById('start').addEventListener('click', function() {
-          splashed = true;
+      let started = false;
 
-          splash.classList.add('reveal');
-          
-          setTimeout(() => {
-            window.dispatchEvent(new WheelEvent('wheel', { deltaY: 10 }));
-          }, 500);
+      window.onload = function() {
+        document.getElementById('start').addEventListener('click', function() {
+          if(!started) {
+            splash.classList.add('reveal');
+            started = true;
+            
+            setTimeout(() => {
+              splashed = true;
+              window.dispatchEvent(new WheelEvent('wheel', { deltaY: 10 }));
+            }, 500);
+          }
         });
       }
 
       window.addEventListener('wheel', function(event) {
-          if(!splashed) {
-            event.stopImmediatePropagation();
-            splashed = true;
-            document.getElementById('start').click();
-          }
-        });
+        if(!splashed) {
+          event.stopImmediatePropagation();
+
+          document.getElementById('start').click();
+        }
+      });
 
     </script>
     
