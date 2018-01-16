@@ -1,5 +1,5 @@
 <template>
-  <div id="route">
+  <div id="route" class='wrapper'>
       <h1>Routing</h1>
   </div>
 </template>

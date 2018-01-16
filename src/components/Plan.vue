@@ -1,5 +1,5 @@
 <template>
-  <div id="plan">
+  <div id="plan" class="wrapper">
     <section class="descContainer">
         <h1 v-html="$t('message2.title')"></h1>
         <p v-html="$t('message2.desc')"></p>

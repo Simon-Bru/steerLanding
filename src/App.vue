@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="dark-bg">
-      <transition name="slide">
+      <transition name="slide"
+        v-on:enter="enter"
+        v-on:leave="leave">
         <router-view></router-view>
       </transition>
     </div>
@@ -9,9 +11,11 @@
 </template>
 
 <script>
-  import debounce from 'debounce';
+  import debounce   from 'debounce';
+  import TweenLite  from 'gsap';
   import { routes } from './router';
   let step = 0;
+  let fwdTransition = true;
 
   export default {
     name: 'app',
@@ -22,7 +26,11 @@
       window.addEventListener('wheel', debounce(this.handleScroll, 800, true));
     },
     methods: {
+      /**
+       * Route relative functions
+       **/
       handleScroll (event) {
+        fwdTransition = event.deltaY > 0;
         event.deltaY < 0 ? this.goBack() : this.goForward();
       },
       goForward () {
@@ -35,6 +43,36 @@
         if(window.history.length > 1 && step > 1) {
           this.$router.go(-1);
           step--;
+        }
+      },
+      /**
+       * Route animation functions
+       */
+      enter ( el, done ) {
+        if(fwdTransition) {
+          TweenLite.from(el, 1, 
+          { opacity: 0, top: '100%', 
+            ease:Expo.easeOut, 
+            onComplete:done } ).play();
+        } else {
+          TweenLite.from(el, 1, 
+          { opacity: 0, top: '-100%', 
+            ease:Expo.easeOut,
+            onComplete:done } ).play();
+        }
+      },
+      leave ( el, done ) {
+        if(fwdTransition) {
+          TweenLite.to(el, 1, 
+          { opacity: 0, top: '-100%', 
+            ease:Power1.easeOut, 
+            onComplete:done } ).play();
+        } else {
+          TweenLite.to(el, 1, 
+          { opacity: 0, top: '100%', 
+            ease:Power1.easeOut, 
+            onComplete:done } ).play();
+
         }
       }
     },
@@ -54,7 +92,7 @@
   max-height: 100vh;
 
   > div.dark-bg {
-    padding-top: 65px;
+    position: relative;
     height: 100%;
   }
 }
