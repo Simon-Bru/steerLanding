@@ -5,20 +5,27 @@
         <span class="dot"></span>
         <span class="circle"></span>
     </span>
+
+    <activity :allData="$t('activity')"></activity>
   </div>
 </template>
 
 <script>
 import TweenMax from 'gsap';
+import Activity from './Activity';
 
 export default {
     name: 'Map',
     mounted: function() {
         const localization = document.querySelector('#localization .circle');
         TweenMax.to(localization, 1, 
-        { width: '50px', height: '50px', 
+        { width: '10vh', height: '10vh', 
         repeat: -1, 
         yoyo: true }).play();
+
+    },
+    components: {
+        Activity
     }
 }
 </script>
@@ -40,8 +47,8 @@ export default {
         position: absolute;
         top: 60%;
         left: 60%;
-        width: 10px;
-        height: 10px;
+        width:  2vh;
+        height: 2vh;
         justify-content: center;
         align-items: center;
 
@@ -50,14 +57,17 @@ export default {
             width: 100%;
             height: 100%;
             border-radius: 100%;
-            border: 1px solid $blue;
+            border: 1px solid $lightblue;
         }
 
         .dot {
-            background-color: $blue;
+            background-color: $lightblue;
+            border: 1px solid #fff;
             width: 100%;
             height: 100%;
             border-radius: 100%;
+            box-shadow: 0 1px 6px 1px $lightblue;
+
         }
     }
 
