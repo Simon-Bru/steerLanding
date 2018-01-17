@@ -75,10 +75,11 @@ export default {
     },
     mounted: function() {        
         const localization = document.querySelector('#localization .circle');      
-        TweenMax.to(localization, 1, 
-        { width: '10vh', height: '10vh', 
+        TweenMax.to(localization, 2, 
+        { width: '10vh', height: '10vh', opacity: '0.1',
         repeat: -1, 
-        yoyo: true }).play();
+        ease: Power1.easeOut,
+        yoyo: false }).play();
 
 
         let tweenline = new TimelineLite({paused: true});
@@ -107,8 +108,8 @@ export default {
                     marker.style.left = '70%';
                 break;
                 case 3: 
-                    marker.style.top = '20%';
-                    marker.style.left = '40%';
+                    marker.style.top = '21%';
+                    marker.style.left = '43%';
                 break;
                 case 4: 
                     marker.style.top = '21%';
