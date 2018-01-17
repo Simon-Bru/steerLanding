@@ -1,6 +1,8 @@
 
 module.exports = {
     en: {
+        yes:    'Let\'s go !',
+        no:     'No thanks',
         message1: {
             title:  'Save your olympic performances',
             desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
@@ -15,6 +17,8 @@ module.exports = {
         }
     },
     fr: {
+        yes:    'J\'y vais !',
+        no:     'Non merci',
         message1: {
             title:  'Enregistrez vos performances olympiques',
             desc:   'Steer prend en compte votre programme olympique pour améliorer votre séjour.<br/>'+
@@ -27,6 +31,12 @@ module.exports = {
             title:  'Planifiez vos journées',
             desc:   'Choisissez les activités auquelles vous souhaitez participer et Steer organise '+
                     'votre parcours.'
+        },
+        activity1: {
+            name:       'Exposition Grèce Antique',
+            location:   'Petit Palais, Paris 75007',
+            time:       '3:00 PM - 5:00 PM',
+            distance:   '450m'
         }
     }
 }
