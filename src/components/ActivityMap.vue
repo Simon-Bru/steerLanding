@@ -190,7 +190,7 @@ export default {
 
     #activityContainer {
         position: absolute;
-        bottom: 25%;
+        bottom: 15%;
         width: 100%;
 
         .button {
@@ -201,7 +201,7 @@ export default {
             color: #fff;
             width: 48%;
             background-color: $lightblue;
-            font-size: 1.4vw;
+            font-size: 3.5vh;
             padding: 5px 0px 5px 0px;
             opacity: 0.9;
             white-space: nowrap;

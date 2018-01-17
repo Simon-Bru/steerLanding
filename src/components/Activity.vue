@@ -55,13 +55,13 @@ export default {
         }
 
         h4 {
-            font-size: 1.2vw;
+            font-size: 3vh;
             margin-bottom: 5px;
             margin-top: 5px;
         }
 
         span {
-            font-size: 1vw;   
+            font-size: 2vh;   
             margin-left: 20%;
         }
 
