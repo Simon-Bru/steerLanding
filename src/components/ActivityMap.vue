@@ -1,21 +1,36 @@
 <template>
   <div id="map">
+    <i class="material-icons">menu</i>
 
     <span id="localization" class="flex">
         <span class="dot"></span>
         <span class="circle"></span>
     </span>
 
-    <activity :allData="$t('activity')"></activity>
+    <activity v-bind:data="activities[0]"></activity>
   </div>
 </template>
 
 <script>
 import TweenMax from 'gsap';
+import Vue      from 'vue';
 import Activity from './Activity';
 
 export default {
     name: 'Map',
+    data: function() {
+        return {
+            activities: [
+                {
+                    name:       this.$i18n.t('activity1.name'),
+                    location:   this.$i18n.t('activity1.location'),
+                    time:       this.$i18n.t('activity1.time'),
+                    distance:   this.$i18n.t('activity1.distance'),
+                    image:      this.$i18n.t('activity1.image')
+                }
+            ]
+        };
+    },
     mounted: function() {
         const localization = document.querySelector('#localization .circle');
         TweenMax.to(localization, 1, 
@@ -41,6 +56,11 @@ export default {
     background-position-x: 40%;  
     width: 100%;
     height: 100%;
+
+    > i {
+        float: left;
+        margin: 10px;
+    }
 
 
     #localization {
