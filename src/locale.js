@@ -46,16 +46,16 @@ module.exports = {
                 distance:   '2km'
             },
             {
-                name:       'Balade dans les tuileries',
-                location:   'Jardin des tuileries, Paris 75007',
-                time:       '6:20 PM - 8:00 PM',
-                distance:   '3km'
-            },
-            {
                 name:       'Boulangerie artisanale',
                 location:   'Petit Palais, ',
                 time:       '5:15 PM - 5:45PM',
                 distance:   '1km'
+            },
+            {
+                name:       'Balade dans les tuileries',
+                location:   'Jardin des tuileries, Paris 75007',
+                time:       '6:20 PM - 8:00 PM',
+                distance:   '3km'
             },
             {
                 name:       'Exposition Grèce antique',
