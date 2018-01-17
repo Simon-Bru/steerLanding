@@ -54,13 +54,13 @@ export default {
 
         let tweenline = new TimelineLite({paused: true});
 
-        tweenline.to(document.getElementById('3'), .5, 
+        tweenline.to(document.getElementById('4'), .5, 
                     { left: '100%', ease: Back.easeIn, delay: 3.5, onComplete: this.nextActivity })
-                .to(document.getElementById('2'), .5, 
+                .to(document.getElementById('3'), .5, 
                     { right: '100%', ease: Back.easeIn, delay: 1, onComplete: this.nextActivity })
-                .to(document.getElementById('1'), .5, 
+                .to(document.getElementById('2'), .5, 
                     { left: '100%', ease: Back.easeIn, delay: 1, onComplete: this.nextActivity })
-                .to(document.getElementById('0'), .5, 
+                .to(document.getElementById('1'), .5, 
                     { left: '100%', ease: Back.easeIn, delay: 1, onComplete: this.nextActivity }).play();
 
     },
