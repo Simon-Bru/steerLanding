@@ -1,8 +1,7 @@
 <template>
-  <div id="activity">
-      <div class="button flex" id="no"><span v-html="$t('no')"></span><i class="icons8-no"></i></div>
-      <div class="button flex" id="yes"><span v-html="$t('yes')"></span><i class="icons8-love"></i></div>
+  <div class="activity">
       <div class='activityDesc'>
+          <i class="icons8-more-info"></i>
           <span class="distance">{{ data.distance }}</span>
           <h4>{{ data.name }}</h4>
           <span class="time">{{ data.time }}</span>
@@ -25,31 +24,17 @@ export default {
 <style lang="scss">
 @import "../assets/style/_colors.scss";
 
-#activity {
+.activity {
     position: absolute;
-    bottom: -5px;
     width: 100%;
 
-    .button {
-        position: relative;
-        text-align: center;
-        border-radius: 30px;
-        display: inline-block;
-        color: #fff;
-        width: 48%;
-        background-color: $lightblue;
-        font-size: 3vh;
-        padding: 5px 0px 5px 0px;
-        opacity: 0.9;
-        white-space: nowrap;
-
-        i {
-            float: right;
-            margin-right: 5px;
-        }
-    }
-
     .activityDesc {
+        max-height: 150px;
+        height: 100% !important;
+        min-height: 90px;
+
+        z-index: 1;
+
         position: relative;
         margin-top: 1px;
         padding-bottom: 10px;
@@ -62,17 +47,22 @@ export default {
             display: block;
         }
 
+        .icons8-more-info {
+            float: right;
+            color: $lightblue;
+            margin-top: 6px;
+            margin-right: 5px;
+        }
+
         h4 {
-            font-size: 2.5vh;
+            font-size: 1.2vw;
             margin-bottom: 5px;
             margin-top: 5px;
         }
 
         span {
-            font-size: 2vh;   
+            font-size: 1vw;   
             margin-left: 20%;
-        }
-        .time {
         }
 
         .distance {

@@ -61,6 +61,7 @@ export default {
         position: absolute;
         top: 10%;
         left: 5%;
+        overflow: hidden;
     }
 }
 </style>
