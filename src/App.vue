@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <div class="dark-bg">
+   <video autoplay muted loop id="Parisvideo">
+  <source src="Paris.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+ <div class="dark-bg">
+     
       <transition name="slide"
         v-on:enter="enter"
         v-on:leave="leave">
         <router-view></router-view>
       </transition>
-    </div>
+     </div>
   </div>
 </template>
-
 <script>
   import debounce   from 'debounce';
   import TweenLite  from 'gsap';
@@ -98,6 +102,7 @@
 }
 
 .full-screen {
+
   position: absolute;
   top: 0;
   left: 0;
@@ -111,5 +116,11 @@
   background-repeat: no-repeat;
   background-color: #fff;
 }
-
+#Parisvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
 </style>
