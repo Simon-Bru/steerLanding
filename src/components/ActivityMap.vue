@@ -8,32 +8,34 @@
     </span>
 
     <svg 
-        xmlns="http://www.w3.org/2000/svg" 
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
         viewBox="0 0 80 135" 
         preserveAspectRatio="none">
+        <defs>
+            <svg:style type="text/css">
+                <![CDATA[
+                    .path {stroke: #000 !important;fill: none !important;stroke-width: 1.3px;}
+                ]]>
+            </svg:style>
+        </defs>
 
-        <polyline id="path1"
+
+        <polyline id="path1" class="path"
         points="24, 66 30, 68 29, 80" 
-        stroke="black" 
-        fill="none"
-        style="stroke-width: 1.3px"></polyline>
+        v-if="activityNb > 0"></polyline>
 
-        <polyline id="path2"
-        points="29, 80 30, 65 33, 59 46, 55 50, 47 56, 52 60, 55 63, 56" 
-        stroke="black" 
-        fill="none"
-        style="stroke-width: 1.3px"></polyline>
+        <polyline id="path2" class="path"
+        points="29, 80 30, 65 33, 59 46, 55 50, 47 56, 52 60, 55 63, 56"
+        v-if="activityNb > 2"></polyline>
 
-        <polyline id="path3"
+        <polyline id="path3" class="path"
         points="57, 53 61, 44 50, 39 43, 41"
-        stroke="black" 
-        fill="none"
-        style="stroke-width: 1.3px"></polyline>
+        v-if="activityNb > 3"></polyline>
 
         <!-- Points -->
-        <circle cx="29" cy="80" r="1.5" fill="red"/>
-        <circle cx="63" cy="56" r="1.5" fill="red"/>
-        <circle cx="43" cy="41" r="1.5" fill="red"/>
+        <circle cx="29" cy="80" r="1.5" fill="red" v-if="activityNb > 0"/>
+        <circle cx="63" cy="56" r="1.5" fill="red" v-if="activityNb > 2"/>
+        <circle cx="43" cy="41" r="1.5" fill="red" v-if="activityNb > 3"/>
     </svg>
 
     <i  class="icons8-location-marker" 
@@ -52,7 +54,7 @@
 </template>
 
 <script>
-import { TweenMax, Back, TimelineLite } from 'gsap';
+import { TweenlineMax, Back } from 'gsap';
 import Vue      from 'vue';
 import Activity from './Activity';
 
@@ -74,29 +76,33 @@ export default {
         };
     },
     mounted: function() {        
-        const localization = document.querySelector('#localization .circle');      
-        TweenMax.to(localization, 2, 
-        { width: '10vh', height: '10vh', opacity: '0.1',
-        repeat: -1, 
-        ease: Power1.easeOut,
-        yoyo: false }).play();
+        const localization = document.querySelector('#localization .circle');    
+
+        let tweenline1 = new TimelineMax({ paused: true, repeat: -1 });
+
+        tweenline1.to(localization, 1.5, 
+        { width: '10vh', height: '10vh',
+        ease: Power1.easeOut })
+        .to(localization, .5,
+        { opacity: '0.2' }).play();
 
 
-        let tweenline = new TimelineLite({paused: true});
+        let tweenline = new TimelineMax({paused: true});
 
         tweenline.to(document.getElementById('4'), .5, 
-                    { left: '100%', ease: Back.easeIn, delay: 3.5, onComplete: this.nextActivity })
-                .to(document.getElementById('3'), .5, 
-                    { right: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
-                .to(document.getElementById('2'), .5, 
-                    { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
-                .to(document.getElementById('1'), .5, 
-                    { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity }).play();
+            { left: '100%', ease: Back.easeIn, delay: 3.5, onComplete: this.nextActivity })
+        .to(document.getElementById('3'), .5, 
+            { right: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
+        .to(document.getElementById('2'), .5, 
+            { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
+        .to(document.getElementById('1'), .5, 
+            { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity }).play();
 
     },
     methods: {
         nextActivity: function() {
             this.activityNb++;
+
             const marker = document.getElementById('marker');
             switch(this.activityNb) {
                 case 1: 
@@ -115,7 +121,6 @@ export default {
                     marker.style.top = '21%';
                     marker.style.left = '76%';
                 break;
-                
             }
         }
     },
@@ -127,6 +132,12 @@ export default {
 
 <style lang="scss">
 @import "../assets/style/_colors.scss";
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 #map {
     background: url('../assets/images/map.png');
@@ -161,6 +172,7 @@ export default {
         justify-content: center;
         align-items: center;
         z-index: 100;
+        opacity: 1;
 
         .circle {
             position: absolute;
@@ -181,17 +193,29 @@ export default {
         }
     }
 
+    
+
     svg {
         position: absolute;
         top: 0; left: 0;
         width: 100%;
         height: 100%;
+
+            .path {
+                stroke: #000;
+                fill: none;
+                stroke-width: 1.3px;
+                stroke-dasharray: 100;
+                stroke-dashoffset: 100;
+                animation: dash 2s linear forwards;
+
+            }
     }
 
 
     #activityContainer {
         position: absolute;
-        bottom: 15%;
+        bottom: 20%;
         width: 100%;
 
         .button {
@@ -202,7 +226,7 @@ export default {
             color: #fff;
             width: 48%;
             background-color: $lightblue;
-            font-size: 3.5vh;
+            font-size: 3vh;
             padding: 5px 0px 5px 0px;
             opacity: 0.9;
             white-space: nowrap;
