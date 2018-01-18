@@ -4,6 +4,7 @@ module.exports = {
         yes:    'Let\'s go',
         no:     'No thanks',
         message1: {
+        
             title:  'Save your olympic performances',
             desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
                     '',
@@ -63,6 +64,11 @@ module.exports = {
                 time:       '3:00 PM - 5:00 PM',
                 distance:   '450m'
             }
-        ]
-    }
+        ],
+        follow:
+        {
+            texte1: 'interessé ? ', 
+            texte2: 'Ajoute ici ton mail pour rester au courant de l avancée du projet'       
+             }
+         }
 }
