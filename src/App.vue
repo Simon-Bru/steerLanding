@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-   <video autoplay muted loop id="Parisvideo">
-  <source src="Paris.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
- <div class="dark-bg">
-     
+    <video autoplay muted loop id="Parisvideo">
+      <source src="/src/assets/images/Paris.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    
+    <div class="dark-bg">
       <transition name="slide"
         v-on:enter="enter"
         v-on:leave="leave">
@@ -122,5 +122,10 @@
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
+    // -webkit-filter: blur(2px);
+    // -moz-filter: blur(2px);
+    // -o-filter: blur(2px);
+    // -ms-filter: blur(2px);
+    // filter: blur(2px);
 }
 </style>
