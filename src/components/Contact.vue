@@ -6,11 +6,8 @@
           Let's discover
         </p>
         
-        <ul class="content__container__list">
-          <li class="content__container__list__item">Paris</li>
-          <li class="content__container__list__item">France</li>
-          <li class="content__container__list__item">Myself</li>
-          <li class="content__container__list__item">others</li>
+        <ul class="content__container__list" id='demoList'>
+          <li class="content__container__list__item" v-for="item in items" :key="item" v-html="item"></li>
         </ul>
       </div>
     </div>
@@ -25,8 +22,31 @@
 </template>
 
 <script>
+import { TweenlineMax, Sine } from 'gsap'; 
+
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    data: function() {
+      let itemsArray = [];
+      this.$i18n.t('demoList').forEach(item => {
+          itemsArray.push(item);
+      });
+
+      return { 
+        items: itemsArray
+      };
+    },
+    mounted: function() {
+      const list = document.getElementById('demoList');
+      console.log(list);
+
+      let tl = new TimelineMax({ paused: false, repeat: -1, repeatDelay: 1 });
+
+      tl.to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
+        .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
+        .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
+        .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 }).play();
+    }
 }
 </script>
 
@@ -37,8 +57,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 110px;
-  padding-bottom: 50px;
+  padding: 110px 20px 50px;
 
   input { 
     border-style: none; 
@@ -158,15 +177,17 @@ export default {
         display: inline;
         // float: right;
         margin: 0;
-        font-size: 15px;
+        font-size: 22px;
       }
 
       &__list {
         margin-top: 0;
-        float: right;
         text-align: right;
         list-style: none;
         padding: 0;
+        position: absolute;
+        right: 50px;
+        top: 0;
         
         &__item {
           line-height:40px;

@@ -15,7 +15,14 @@ module.exports = {
         message2: {
             title:  'Plan your journey',
             desc:   ''
-        }
+        },
+        demoList: [
+            'Paris',
+            'France',
+            'Olympics',
+            'Others',
+            'Paris'
+        ]
     },
     fr: {
         yes:    'J\'y vais',
@@ -69,6 +76,13 @@ module.exports = {
         {
             texte1: 'interessé ? ', 
             texte2: 'Ajoute ici ton mail pour rester au courant de l avancée du projet'       
-             }
-         }
+        },
+        demoList: [
+            'Paris',
+            'France',
+            'JO2024',
+            'Others',
+            'Paris'
+        ]
+    }
 }
