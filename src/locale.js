@@ -4,11 +4,13 @@ module.exports = {
         yes:    'Let\'s go',
         no:     'No thanks',
         message1: {
-            title:  'Save your olympic performances',
             desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
+            title :'How it works ?',
+            title2:  'Scan/Advise your olympic performances',
+            desc2:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
                     '',
-            title2: 'Save your interests',
-            desc2:  'Steer will only propose you for events you\'ll love.',        
+            title3: 'Save your interests',
+            desc3:  'Steer will only propose you for events you\'ll love.',        
             search: 'Search a sport'
         },
         message2: {
@@ -20,17 +22,22 @@ module.exports = {
         yes:    'J\'y vais',
         no:     'Non merci',
         message1: {
-            title:  'Enregistrez vos performances olympiques',
-            desc:   'Steer prend en compte votre programme olympique pour améliorer votre séjour.<br/>'+
+            
+            title :'Comment ça marche ?',
+            desc:'' ,
+
+            title2 :  'Scannez / Renseignez vos réservations',
+            desc2:   'Pour améliorer votre séjour, nous avons besoin de connaître vos impératifs sportifs. <br/>'+
                     '',
-            title2: 'Enregistrez vos centres d\'intérêt',
-            desc2:  'Pour optimiser la qualité des évènements proposés par Steer',
+            title3: 'Renseignez vos centres d\'intérêt',
+            desc3:  'Afin d\'optimiser la pertinence des évènements proposés par notre algorithme, dites-nous en davantage sur vous.',
             search: 'Rechercher un sport'
         },
         message2: {
-            title:  'Planifiez vos journées',
-            desc:   'Choisissez les activités auquelles vous souhaitez participer et Steer organise '+
-                    'votre parcours.'
+            title:  'Dictez vos envies',
+            desc:   'Votre itinéraire vous appartient: chaque proposition d\'évènement est une suggestion que vous pouvez accepter ou décliner en fonction de vos envies du moment.',
+            title2: 'Laissez-vous guider',
+            desc2: 'Votre travail est maintenant terminé. Etes-vous prêts à vivre une expérience inoubliable?',
         },
         activities: [
             {

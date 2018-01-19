@@ -2,7 +2,9 @@
   <div id="plan" class="wrapper">
     <section class="descContainer">
         <h1 v-html="$t('message2.title')"></h1>
-        <p v-html="$t('message2.desc')"></p>
+        <p v-html="$t('message2.desc')"></p>        
+        <h1 v-html="$t('message2.title2')"></h1>
+        <p v-html="$t('message2.desc2')"></p>
     </section>
     <section>
         <ui-frame step="1"></ui-frame>
