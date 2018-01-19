@@ -4,7 +4,6 @@ module.exports = {
         yes:    'Let\'s go',
         no:     'No thanks',
         message1: {
-            desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
             title :'How it works ?',
             title2:  'Scan/Advise your olympic performances',
             desc2:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
