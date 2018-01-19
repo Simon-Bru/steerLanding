@@ -4,10 +4,12 @@
         <ui-frame step="0"></ui-frame>
       </section>
       <section class="descContainer">
-        <h1 v-html="$t('message1.title')"></h1>
-        <p v-html="$t('message1.desc')"></p>
+        <h1 id='contrast' v-html="$t('message1.title')"></h1>
+        <p  v-html="$t('message1.desc')"></p>
         <h1 v-html="$t('message1.title2')"></h1>
         <p v-html="$t('message1.desc2')"></p>
+        <h1 v-html="$t('message1.title3')"></h1>
+        <p v-html="$t('message1.desc3')"></p>
       </section>
   </div>
 </template>
