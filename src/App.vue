@@ -27,7 +27,7 @@
       setTimeout(() => {
         this._self.$el.nextElementSibling.classList.value += ' loaded';
       }, 1000);
-      window.addEventListener('wheel', debounce(this.handleScroll, 800, true));
+      window.addEventListener('wheel', debounce(this.handleScroll, 300, true));
     },
     methods: {
       /**

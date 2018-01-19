@@ -186,7 +186,7 @@ export default {
         list-style: none;
         padding: 0;
         position: absolute;
-        right: 50px;
+        right: 30px;
         top: 0;
         
         &__item {
