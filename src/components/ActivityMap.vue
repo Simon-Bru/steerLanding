@@ -55,7 +55,6 @@
 
 <script>
 import { TweenlineMax, Back } from 'gsap';
-import Vue      from 'vue';
 import Activity from './Activity';
 
 export default {
@@ -104,23 +103,25 @@ export default {
             this.activityNb++;
 
             const marker = document.getElementById('marker');
-            switch(this.activityNb) {
-                case 1: 
-                    marker.style.top = '60%';
-                    marker.style.left = '85%';
-                break;
-                case 2: 
-                    marker.style.top = '32%';
-                    marker.style.left = '70%';
-                break;
-                case 3: 
-                    marker.style.top = '21%';
-                    marker.style.left = '43%';
-                break;
-                case 4: 
-                    marker.style.top = '21%';
-                    marker.style.left = '76%';
-                break;
+            if(marker !== null){
+                switch(this.activityNb) {
+                    case 1: 
+                        marker.style.top = '60%';
+                        marker.style.left = '85%';
+                    break;
+                    case 2: 
+                        marker.style.top = '32%';
+                        marker.style.left = '70%';
+                    break;
+                    case 3: 
+                        marker.style.top = '21%';
+                        marker.style.left = '43%';
+                    break;
+                    case 4: 
+                        marker.style.top = '21%';
+                        marker.style.left = '76%';
+                    break;
+                }
             }
         }
     },
