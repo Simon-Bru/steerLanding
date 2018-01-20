@@ -12,7 +12,6 @@
     "start": "npm run build && node server.js"
   },
   "dependencies": {
-    "animejs": "^2.2.0",
     "debounce": "^1.1.0",
     "express": "^4.16.2",
     "gsap": "^1.20.3",
