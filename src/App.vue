@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <video autoplay muted loop id="Parisvideo">
-      <source src="src/assets/images/Paris.mp4" type="video/mp4">
+      <source ref='videoRef' src="video_bg.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
     
@@ -18,6 +18,8 @@
   import debounce   from 'debounce';
   import TweenLite  from 'gsap';
   import { routes } from './router';
+  import video_bg   from './assets/images/Paris.mp4';
+  
   let step = 0;
   let fwdTransition = true;
 
@@ -28,6 +30,7 @@
         this._self.$el.nextElementSibling.classList.value += ' loaded';
       }, 1000);
       window.addEventListener('wheel', debounce(this.handleScroll, 300, true));
+      this.$refs.videoRef.src = video_bg;
     },
     methods: {
       /**
