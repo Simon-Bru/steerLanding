@@ -2,9 +2,7 @@
   <section id="contact" class="wrapper flex flex-center">
     <div class="content">
       <div class="content__container flex">
-        <p class="content__container__text">
-          Let's discover
-        </p>
+        <p class="content__container__text" v-html="$t('discover')"></p>
         
         <ul class="content__container__list" id='demoList'>
           <li class="content__container__list__item" v-for="item in items" :key="item" v-html="item"></li>
@@ -16,7 +14,7 @@
       <input class="" type="email" placeholder="What's your email?"/>
       <button type="submit">
         <i class="icon ion-android-arrow-forward"></i>
-        </button>
+      </button>
     </div>
   </section>
 </template>

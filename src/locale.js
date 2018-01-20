@@ -4,9 +4,7 @@ module.exports = {
         yes:    'Let\'s go',
         no:     'No thanks',
         message1: {        
-            title:  'Save your olympic performances',
-            desc:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>',
-            title :'How it works ?',
+            title :'How does it works ?',
             title2:  'Scan/Advise your olympic performances',
             desc2:   'Steer will be aware of your olympic programme to make your stay the best possible.<br/>'+
                     '',
@@ -17,8 +15,8 @@ module.exports = {
         message2: {
             title:  'Tell us what you want',
             desc:   'This journey is yours: every event is a suggest and you can accept or decline according to your current desires. ',
-            title2: 'Laissez-vous guider',
-            desc2: 'Your mission is over. Are you ready to live an unforgettable experience?',
+            title2: 'Let us steer you',
+            desc2:  'Your mission is over. Are you ready to live an unforgettable experience?',
         },
         activities: [
             {
@@ -57,10 +55,11 @@ module.exports = {
             texte1: 'interested ? ', 
             texte2: 'Add your mail to be aware of the project and his features!',      
         },
+        discover: 'Let\'s discover',        
         demoList: [
             'Paris',
             'France',
-            'Olympics',
+            'Olympics2024',
             'Others',
             'Paris'
         ]
@@ -71,11 +70,9 @@ module.exports = {
         message1: {
             
             title :'Comment ça marche ?',
-            desc:'' ,
 
             title2 :  'Scannez / Renseignez vos réservations',
-            desc2:   'Pour améliorer votre séjour, nous avons besoin de connaître vos impératifs sportifs. <br/>'+
-                    '',
+            desc2:   'Pour améliorer votre séjour, nous avons besoin de connaître vos impératifs sportifs.',
             title3: 'Renseignez vos centres d\'intérêt',
             desc3:  'Afin d\'optimiser la pertinence des évènements proposés par notre algorithme, dites-nous en davantage sur vous.',
             search: 'Rechercher un sport'
@@ -84,7 +81,7 @@ module.exports = {
             title:  'Dictez vos envies',
             desc:   'Votre itinéraire vous appartient: chaque proposition d\'évènement est une suggestion que vous pouvez accepter ou décliner en fonction de vos envies du moment.',
             title2: 'Laissez-vous guider',
-            desc2: 'Votre mission est maintenant terminée. Etes-vous prêts à vivre une expérience inoubliable?',
+            desc2:  'Votre mission est maintenant terminée. Etes-vous prêts à vivre une expérience inoubliable?',
         },
         activities: [
             {
@@ -123,6 +120,7 @@ module.exports = {
             texte1: 'Tu t\'imagines déjà avec Steer dans les rues parisiennes?', 
             texte2: 'Rensigne ton adresse mail pour être tenu au courant de notre lancement et de nos actualités!'       
         },
+        discover: 'Découvrez',
         demoList: [
             'Paris',
             'France',
