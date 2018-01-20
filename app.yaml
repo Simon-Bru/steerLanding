@@ -1,0 +1,11 @@
+runtime: nodejs
+env: flex
+
+skip_files:
+- src
+- node_modules
+- ^(.*/)?\.config.js$
+- README.md
+- .gitignore
+- .editorconfig
+- .babelrc
