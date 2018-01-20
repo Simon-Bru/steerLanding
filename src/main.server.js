@@ -11,7 +11,7 @@ Vue.use(VueI18n);
 Vue.use(VueRouter);
 
 const i18n = new VueI18n({
-  locale: window.navigator.language == 'fr' ? 'fr' : 'en',
+  locale: 'en',
   messages
 });
 
@@ -22,10 +22,13 @@ const router = new VueRouter({
 
 router.replace({ path: '/', redirect: '/' });
 
-new Vue({
-  el: '#app',
-  render: h => h(App),
-  i18n,
-  router,
-  components: { App }
-});
+export default context => {
+  return Promise.resolve(
+    new Vue({
+      render: h => h(App),
+      i18n,
+      router,
+      components: { App }
+    })
+  );
+};
