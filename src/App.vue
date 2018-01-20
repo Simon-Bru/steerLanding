@@ -1,19 +1,25 @@
 <template>
   <div id="app">
+    <video autoplay muted loop id="Parisvideo">
+      <source ref='videoRef' src="video_bg.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    
     <div class="dark-bg">
       <transition name="slide"
         v-on:enter="enter"
         v-on:leave="leave">
         <router-view></router-view>
       </transition>
-    </div>
+     </div>
   </div>
 </template>
-
 <script>
   import debounce   from 'debounce';
   import TweenLite  from 'gsap';
   import { routes } from './router';
+  import video_bg   from './assets/images/Paris.mp4';
+  
   let step = 0;
   let fwdTransition = true;
 
@@ -23,7 +29,8 @@
       setTimeout(() => {
         this._self.$el.nextElementSibling.classList.value += ' loaded';
       }, 1000);
-      window.addEventListener('wheel', debounce(this.handleScroll, 800, true));
+      window.addEventListener('wheel', debounce(this.handleScroll, 300, true));
+      this.$refs.videoRef.src = video_bg;
     },
     methods: {
       /**
@@ -98,6 +105,7 @@
 }
 
 .full-screen {
+
   position: absolute;
   top: 0;
   left: 0;
@@ -111,5 +119,16 @@
   background-repeat: no-repeat;
   background-color: #fff;
 }
-
+#Parisvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    // -webkit-filter: blur(2px);
+    // -moz-filter: blur(2px);
+    // -o-filter: blur(2px);
+    // -ms-filter: blur(2px);
+    // filter: blur(2px);
+}
 </style>

@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: 'dist/',
     filename: 'build.js'
   },
   module: {
@@ -61,13 +61,20 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg|woff|woff2|ttf|eot)$/,
+        test: /\.(png|jpg|gif|svg|mp4|woff|woff2|ttf|eot)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.(mov|mp4)$/,
+        loader: 'file-loader?limit=10000&mimetype=video/mp4',
+        options: {
+          name: '[name].[ext]'
+        }  
       }
-    ]
+  ]
   },
   resolve: {
     alias: {
