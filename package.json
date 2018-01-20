@@ -2,7 +2,7 @@
   "name": "steerlanding",
   "description": "Steer Application landing page. The new app to plan the perfect in Paris for 2024 Olympics",
   "version": "1.0.0",
-  "author": "Simon Bruguerolle <simon.bruguerolle@hotmail.fr>",
+  "author": "Simon Bruguerolle <contact@steer.paris>",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -13,7 +13,6 @@
     "animejs": "^2.2.0",
     "debounce": "^1.1.0",
     "gsap": "^1.20.3",
-    "material-design-icons": "^3.0.1",
     "vue": "^2.5.11",
     "vue-i18n": "^7.3.3",
     "vue-router": "^3.0.1"
