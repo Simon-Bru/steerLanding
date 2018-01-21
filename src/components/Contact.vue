@@ -5,15 +5,15 @@
         <p class="content__container__text" v-html="$t('discover')"></p>
         
         <ul class="content__container__list" id='demoList'>
-          <li class="content__container__list__item" v-for="item in items" :key="item" v-html="item"></li>
+          <li class="content__container__list__item" v-for="(item, index) in items" :key="index" v-html="item"></li>
         </ul>
       </div>
     </div>
 
     <div class="webflow-style-input">
-      <input class="" type="email" placeholder="What's your email?"/>
-      <button type="submit">
-        <i class="icon ion-android-arrow-forward"></i>
+      <input type="email" placeholder="What's your email?" v-model="email" />
+      <button type="submit" v-on:click='submit(email)'>
+        <i class="icons8-caret-arrowhead-facing-down pointer"></i>
       </button>
     </div>
   </section>
@@ -21,6 +21,7 @@
 
 <script>
 import { TweenlineMax, Sine } from 'gsap'; 
+import Vue from 'vue';
 
 export default {
     name: 'Contact',
@@ -31,12 +32,12 @@ export default {
       });
 
       return { 
-        items: itemsArray
+        items: itemsArray,
+        email: ''
       };
     },
     mounted: function() {
       const list = document.getElementById('demoList');
-      console.log(list);
 
       let tl = new TimelineMax({ paused: false, repeat: -1, repeatDelay: 1 });
 
@@ -44,6 +45,18 @@ export default {
         .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
         .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
         .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 }).play();
+    },
+    methods: {
+      submit: function(email) {
+        // TODO validate mail
+        if(email !== null && email) {
+          this.$http.post('http://localhost:8080/subscribe?email='+email, {}).then((response) => {
+            console.log(response);
+          }, (response) => {
+            console.log(response);
+          });
+        }
+      }
     }
 }
 </script>
@@ -68,6 +81,7 @@ export default {
     background: none; 
     border: none; 
     outline: none; 
+    transform: rotate(-90deg);
   }
 
   // colors
@@ -85,6 +99,8 @@ export default {
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -112,7 +128,7 @@ export default {
       width: 100%;
       color: $input-text-active;
       font-size: 1.5rem;
-      // line-height: 2.4rem;
+      line-height: 2.4rem;
       &::-webkit-input-placeholder {
         color: $input-text-inactive;
       }
@@ -120,8 +136,8 @@ export default {
 
     button {
       color:  $input-text-inactive;
-      font-size: 2.4rem;
-      line-height: 2.4rem;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
       vertical-align: middle;
       transition: color .25s;
       &:hover {
@@ -137,6 +153,7 @@ export default {
   .content {
     position: relative;
     width: 350px;
+    min-height: 40px;
     overflow:hidden;
     margin-bottom: 5%;
     
