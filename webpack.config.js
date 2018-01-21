@@ -69,7 +69,7 @@ module.exports = {
       },
       {
         test: /\.(mov|mp4)$/,
-        loader: 'file-loader',
+        loader: 'file-loader?limi=1000&mimetype=media/mp4',
         options: {
           name: '[name].[ext]'
         }  
