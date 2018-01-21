@@ -6,12 +6,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "npm run build:server && npm run build:client",
     "build:client": "NODE_ENV=production webpack --progress --hide-modules",
     "build:server": "NODE_ENV=production webpack --config webpack.server.config.js --progress --hide-modules",
     "start": "node server.js"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
     "debounce": "^1.1.0",
     "express": "^4.16.2",
     "gsap": "^1.20.3",
