@@ -138,7 +138,7 @@ export default {
     position: relative;
     width: 350px;
     overflow:hidden;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
     
     font-family: 'Lato', sans-serif;
     font-size: 35px;
