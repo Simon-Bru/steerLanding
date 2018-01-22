@@ -50,7 +50,7 @@ export default {
       submit: function(email) {
         // TODO validate mail
         if(email !== null && email) {
-          this.$http.post('http://localhost:8080/subscribe', { email: email },
+          this.$http.post('subscribe', { email: email },
           { headers: { 'X-CSRF-Token': this.getCookie('XSRF-TOKEN'), 'Content-Type': 'application/json; charset=utf-8' } }).then((response) => {
             console.log(response);
           }, (response) => {
