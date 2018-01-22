@@ -1,6 +1,6 @@
 const fs                    = require('fs'),
       express               = require('express'),
-      request                  = require('request'),
+      request               = require('request'),
     { createBundleRenderer }= require('vue-server-renderer'),
       csrf                  = require('csurf'),
       bodyParser            = require('body-parser'),
