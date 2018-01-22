@@ -25,9 +25,11 @@ const app = express();
 
 app.set('trust proxy', true);
 
-// Prevent CORS
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
+// Prevent CORS
 app.use(csrf({ cookie: true }));
 
 // Serve static assets from ./dist on the /dist route.
@@ -38,6 +40,16 @@ app.use(function (req, res, next) {
   res.cookie('XSRF-TOKEN', token);
   res.locals.csrfToken = token;
   next();
+});
+
+app.use (function (req, res, next) {
+  var schema = (req.headers['x-forwarded-proto'] || '').toLowerCase();
+  console.log(schema);
+  if (schema === 'http' || schema === '') {
+    next();
+  } else {
+    res.redirect('https://' + req.headers.host + req.url);
+  }
 });
 
 // Render all other routes with the bundleRenderer.
@@ -76,7 +88,8 @@ app.post('/subscribe', (req, res) => {
           if (rBody.status < 300 || (rBody.status === 400 && rBody.title === "Member Exists")) {
             res.sendStatus(200);
           } else {
-            res.sendStatus(rBody.status);
+            console.log(rBody);
+            res.sendStatus(400);
           }
         });
   } else {
