@@ -50,12 +50,29 @@ export default {
       submit: function(email) {
         // TODO validate mail
         if(email !== null && email) {
-          this.$http.post('http://localhost:8080/subscribe?email='+email, {}).then((response) => {
+          this.$http.post('http://localhost:8080/subscribe', { email: email },
+          { headers: { 'X-CSRF-Token': this.getCookie('XSRF-TOKEN'), 'Content-Type': 'application/json; charset=utf-8' } }).then((response) => {
             console.log(response);
           }, (response) => {
             console.log(response);
           });
         }
+      },
+      getCookie: function(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              console.log(c.substring(name.length, c.length));
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
       }
     }
 }
