@@ -12,7 +12,7 @@ Vue.use(VueI18n);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.http.options.root = 'https://steer.paris';
+Vue.http.options.root = window.location.origin;
 
 const i18n = new VueI18n({
   locale: window.navigator.language == 'fr' ? 'fr' : 'en',
