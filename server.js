@@ -42,16 +42,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use (function (req, res, next) {
-  var schema = (req.headers['x-forwarded-proto'] || '').toLowerCase();
-  console.log(schema);
-  if (schema === 'http' || schema === '') {
-    next();
-  } else {
-    res.redirect('https://' + req.headers.host + req.url);
-  }
-});
-
 // Render all other routes with the bundleRenderer.
 app.get('*', (req, res) => {
   bundleRenderer
