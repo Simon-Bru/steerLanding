@@ -52,9 +52,9 @@ export default {
         if(email !== null && email) {
           this.$http.post('subscribe', { email: email },
           { headers: { 'X-CSRF-Token': this.getCookie('XSRF-TOKEN'), 'Content-Type': 'application/json; charset=utf-8' } }).then((response) => {
-            console.log(response);
+            //TODO Display success
           }, (response) => {
-            console.log(response);
+            //TODO Display error
           });
         }
       },
@@ -63,14 +63,13 @@ export default {
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split(';');
         for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-              console.log(c.substring(name.length, c.length));
-                return c.substring(name.length, c.length);
-            }
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
         }
         return "";
       }
