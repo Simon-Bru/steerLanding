@@ -38,8 +38,8 @@
         <circle cx="43" cy="41" r="1.5" fill="red" v-if="activityNb > 3"/>
     </svg>
 
-    <i  class="icons8-location-marker" 
-        id="marker"></i>
+    <i  class="icons8-location-marker marker" 
+        :id="markerId"></i>
 
     <div id='activityContainer'>
         <div class="button flex" id="no"><span v-html="$t('no')"></span><i class="icons8-no"></i></div>
@@ -48,7 +48,7 @@
         <activity   v-for="(activity, index) in activities" 
                     :key="activity.name" 
                     :data="activity"
-                    :id="index"></activity>
+                    :id="index+uniqueId"></activity>
     </div>
   </div>
 </template>
@@ -69,12 +69,18 @@ export default {
                 distance:   activity.distance
             });
         });
+        const unique = Math.floor(Math.random() * 100);
+
         return {
             activities: array,
-            activityNb: 0
+            activityNb: 0,
+            uniqueId: unique,
+            markerId: "marker"+unique
         };
     },
-    mounted: function() {        
+    mounted: function() {       
+        
+        this.markerId = "marker"+Math.floor(Math.random() * 10);
         const localization = document.querySelector('#localization .circle');
 
         let tweenline1 = new TimelineMax({ paused: true, repeat: -1 });
@@ -88,13 +94,13 @@ export default {
 
         let tweenline = new TimelineMax({paused: true});
 
-        tweenline.to(document.getElementById('4'), .5, 
+        tweenline.to(document.getElementById(4+this.uniqueId), .5, 
             { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
-        .to(document.getElementById('3'), .5, 
+        .to(document.getElementById(3+this.uniqueId), .5, 
             { right: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity })
-        .to(document.getElementById('2'), .5, 
+        .to(document.getElementById(2+this.uniqueId), .5, 
             { left: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity })
-        .to(document.getElementById('1'), .5, 
+        .to(document.getElementById(1+this.uniqueId), .5, 
             { left: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity }).play();
 
     },
@@ -102,7 +108,7 @@ export default {
         nextActivity: function() {
             this.activityNb++;
 
-            const marker = document.getElementById('marker');
+            const marker = document.getElementById(this.markerId);
             if(marker !== null){
                 switch(this.activityNb) {
                     case 1: 
@@ -155,7 +161,7 @@ export default {
         margin: 10px;
     }
 
-    #marker {
+    .marker {
         position: absolute;
         color: $pink;
         font-size: 4vh;
