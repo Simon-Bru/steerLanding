@@ -33,23 +33,34 @@
       setTimeout(() => {
         this._self.$el.nextElementSibling.classList.value += ' loaded';
       }, 1000);
-      window.addEventListener('wheel', debounce(this.handleScroll, 300, true));
+      window.addEventListener('wheel', debounce(this.handleScroll, 100, true));
+      window.addEventListener('keyup', debounce((ev) => {
+        if(ev.keyCode == 38) {
+          fwdTransition = false;          
+          this.goBack();
+        }
+        if(ev.keyCode == 40) {
+          fwdTransition = true;
+          this.goForward();
+        }
+      }, 200, true));
     },
     methods: {
       /**
        * Route relative functions
        **/
       handleScroll (event) {
-        fwdTransition = event.deltaY > 0;
         event.deltaY < 0 ? this.goBack() : this.goForward();
       },
       goForward () {
         if(step < routes.length) {
+          fwdTransition = true;
           this.$router.push(routes[step].path);
           step++;
         }
       },
       goBack () {
+        fwdTransition = false;
         if(window.history.length > 1 && step > 1) {
           this.$router.go(-1);
           step--;
