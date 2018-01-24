@@ -75,7 +75,7 @@ export default {
         };
     },
     mounted: function() {        
-        const localization = document.querySelector('#localization .circle');    
+        const localization = document.querySelector('#localization .circle');
 
         let tweenline1 = new TimelineMax({ paused: true, repeat: -1 });
 
@@ -89,13 +89,13 @@ export default {
         let tweenline = new TimelineMax({paused: true});
 
         tweenline.to(document.getElementById('4'), .5, 
-            { left: '100%', ease: Back.easeIn, delay: 3.5, onComplete: this.nextActivity })
-        .to(document.getElementById('3'), .5, 
-            { right: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
-        .to(document.getElementById('2'), .5, 
             { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
+        .to(document.getElementById('3'), .5, 
+            { right: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity })
+        .to(document.getElementById('2'), .5, 
+            { left: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity })
         .to(document.getElementById('1'), .5, 
-            { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity }).play();
+            { left: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity }).play();
 
     },
     methods: {
