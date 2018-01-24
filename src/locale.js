@@ -55,12 +55,12 @@ module.exports = {
             texte1: 'interested ? ', 
             texte2: 'Add your mail to be aware of the project and his features!',      
         },
-        discover: 'Let\'s discover',        
+        discover:   'Let\'s discover',    
+        email:      'What\'s your email ?',
         demoList: [
             'Paris',
             'France',
             'Olympics2024',
-            'Others',
             'Paris'
         ]
     },
@@ -120,12 +120,12 @@ module.exports = {
             texte1: 'Tu t\'imagines déjà avec Steer dans les rues parisiennes?', 
             texte2: 'Rensigne ton adresse mail pour être tenu au courant de notre lancement et de nos actualités!'       
         },
-        discover: 'Découvrez',
+        discover:   'Let\'s discover',
+        email:      'Quelle est votre email ?',
         demoList: [
             'Paris',
             'France',
             'JO2024',
-            'Others',
             'Paris'
         ],
     }

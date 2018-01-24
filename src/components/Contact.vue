@@ -11,7 +11,7 @@
     </div>
 
     <div class="webflow-style-input">
-      <input type="email" placeholder="What's your email?" v-model="email" />
+      <input type="email" :placeholder="$t('email')" v-model="email" />
       <button type="submit" v-on:click='submit(email)'>
         <i class="icons8-caret-arrowhead-facing-down pointer"></i>
       </button>
