@@ -53,6 +53,7 @@ export default {
             display:block;
             height:100%;
             width:auto;
+            max-width: 100%;
         }
     }
 

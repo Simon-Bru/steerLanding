@@ -5,19 +5,36 @@
       Your browser does not support HTML5 video.
     </video>
     
-    <div class="dark-bg">
+    <template
+      class=""
+      v-if="isMobile">
+      <div class="full-fixed dark-bg"></div>
+      <start></start>
+      <plan></plan>
+      <contact></contact>  
+    </template>
+
+    <div class="dark-bg" 
+      v-else>
       <transition name="slide"
         v-on:enter="enter"
         v-on:leave="leave">
         <router-view></router-view>
       </transition>
+
+      
      </div>
   </div>
 </template>
 <script>
-  import debounce   from 'debounce';
-  import TweenLite  from 'gsap';
-  import { routes } from './router';
+  import debounce     from 'debounce';
+  import TweenLite    from 'gsap';
+  import MobileDetect from 'mobile-detect';
+  import { routes }   from './router';
+
+  import Start        from './components/Start';
+  import Plan         from './components/Plan';
+  import Contact      from './components/Contact';
   
   let step = 0;
   let fwdTransition = true;
@@ -26,24 +43,38 @@
     name: 'app',
     data: () => {
       return {
-        video_bg : require('./assets/images/Paris.mp4')
+        video_bg : require('./assets/images/Paris.mp4'),
+        isMobile: false
       };
     },
-    mounted: function() {      
+    components: {
+      Start,
+      Plan,
+      Contact
+    },
+    mounted: function() {
       setTimeout(() => {
-        this._self.$el.nextElementSibling.classList.value += ' loaded';
+        this._self.$el.previousElementSibling.classList.value += ' loaded';
       }, 1000);
-      window.addEventListener('wheel', debounce(this.handleScroll, 200, true));
-      window.addEventListener('keyup', debounce((ev) => {
-        if(ev.keyCode == 38) {
-          fwdTransition = false;          
-          this.goBack();
-        }
-        if(ev.keyCode == 40) {
-          fwdTransition = true;
-          this.goForward();
-        }
-      }, 200, true));
+
+      const md = new MobileDetect(window.navigator.userAgent);
+      if(md.mobile()) {
+        this.isMobile = true;
+        this._self.$el.previousElementSibling.classList.value += ' mobile';
+      }
+      else {
+        window.addEventListener('wheel', debounce(this.handleScroll, 200, true));
+        window.addEventListener('keyup', debounce((ev) => {
+          if(ev.keyCode == 38) {
+            fwdTransition = false;          
+            this.goBack();
+          }
+          if(ev.keyCode == 40) {
+            fwdTransition = true;
+            this.goForward();
+          }
+        }, 200, true));
+      }
     },
     methods: {
       /**
@@ -107,7 +138,6 @@
 #app {
   @extend .full-screen;
   // TODO Add video background
-  background: url('./assets/images/paris-bg.jpg');
   background-position: center;
   background-size: cover;
   max-height: 100vh;
@@ -139,6 +169,8 @@
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
+    background: url('./assets/images/paris-bg.jpg');
+    
     // -webkit-filter: blur(2px);
     // -moz-filter: blur(2px);
     // -o-filter: blur(2px);

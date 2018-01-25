@@ -17,9 +17,6 @@
     <meta name="copyright" content="Steer" />
   </head>
   <body>
-    <!--vue-ssr-outlet-->
-    <div id="app"></div>
-
     <div id="splash">
       <div class="steer">
         <div class="up">
@@ -68,12 +65,16 @@
         </div>
         <div class="sub_text">
           <h1>Plan the perfect stay for 2024 Olympics</h1>
-          <i class="icons8-caret-arrowhead-facing-down pointer" id="start"></i>
+          <i class="icons8-caret-arrowhead-facing-down pointer" id="startArrow"></i>
         </div>
       </div>
     </div>
+
+    <!--vue-ssr-outlet-->
+
     <style>
     body {
+      margin: 0;
       overflow: hidden;
     }
 
@@ -88,6 +89,7 @@
     }
 
     #splash {
+      z-index: 1000;
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -103,6 +105,22 @@
       -moz-transition: background-color 1s linear 1.5s, height .7s ease-out;
       -o-transition: background-color 1s linear 1.5s, height .7s ease-out;
       -webkit-transition: background-color 1s linear 1.5s, height .7s ease-out;
+    }
+    #splash.mobile + #app {
+      position: relative;
+      margin-top: 100vh;
+      transition: margin 1s;
+
+    }
+    #splash.mobile.reveal + body {
+      overflow: visible !important;
+    }    
+    #splash.mobile.reveal + #app {
+      margin-top: 0px;
+    }
+    #splash.mobile + #app .wrapper {
+      position: relative !important;
+      height: 500px !important;
     }
     #splash .steer {
       text-align: center;
@@ -196,9 +214,10 @@
       let started = false;
 
       window.onload = function() {
-        document.getElementById('start').addEventListener('click', function() {
+        document.getElementById('startArrow').addEventListener('click', function() {
           if(!started) {
             splash.classList.add('reveal');
+            document.body.classList.add("overflowed");
             started = true;
             
             setTimeout(() => {
@@ -213,7 +232,7 @@
         if(!splashed) {
           event.stopImmediatePropagation();
 
-          document.getElementById('start').click();
+          document.getElementById('startArrow').click();
         }
       });
 
@@ -222,7 +241,7 @@
           if(event.keyCode == 38 || event.keyCode == 40) {
             event.stopImmediatePropagation();
   
-            document.getElementById('start').click();
+            document.getElementById('startArrow').click();
           }
         }
       });

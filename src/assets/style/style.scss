@@ -53,6 +53,14 @@ p {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.full-fixed {
+    position: fixed !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .wrapper {
     position: absolute;
     top: 0;
@@ -63,15 +71,39 @@ p {
 }
 
 @media screen and (max-width: 700px) {
+    body {
+        overflow: hidden;
+    }
+    body.overflowed {
+        overflow: visible !important;
+    }
+    
     .wrapper {
+        position: relative;
         grid-template-columns: 1fr !important;
 
         .frame-container {
             grid-row: 2/2;
             text-align: center;
             padding: 0 !important;
+
+            margin-left: 20px;
+            margin-right:20px;
         }
     }
+
+    #plan, #contact {
+        margin-top: 90% !important;
+
+       .button, h4 {
+           font-size: 15px !important;
+       }
+
+       .activity .activityDesc span {
+           font-size: 10px;
+       }
+    }
+
 }
 
 
