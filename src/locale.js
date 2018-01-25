@@ -62,7 +62,8 @@ module.exports = {
             'France',
             'Olympics2024',
             'Paris'
-        ]
+        ],
+        error: 'An error has occured... Please try again'        
     },
     fr: {
         yes:    'J\'y vais',
@@ -128,5 +129,6 @@ module.exports = {
             'JO2024',
             'Paris'
         ],
+        error: 'Une erreur est surevenue... Veuillez réessayer'
     }
 }

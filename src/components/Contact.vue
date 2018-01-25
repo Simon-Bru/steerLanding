@@ -16,9 +16,10 @@
     <div class="webflow-style-input">
       <input type="email" :placeholder="$t('email')" v-model="email" />
       <button type="submit" v-on:click='submit(email)'>
-        <i class="icons8-caret-arrowhead-facing-down pointer"></i>
+        <i class="icons8-caret-arrowhead-facing-down" id="buttonIcon"></i>
       </button>
     </div>
+    <small class="hidden" id="errorMsg" v-html="$t('error')"></small>
   </section>
 </template>
 
@@ -50,13 +51,23 @@ export default {
     },
     methods: {
       submit: function(email) {
+        const btn = document.getElementById('buttonIcon');
+        btn.setAttribute('disabled', true);
+
+        btn.classList.remove('icons8-caret-arrowhead-facing-down');
+        btn.classList.add('icons8-circled-notch');
+
         // TODO validate mail
         if(email !== null && email) {
           this.$http.post('subscribe', { email: email },
           { headers: { 'X-CSRF-Token': this.getCookie('XSRF-TOKEN'), 'Content-Type': 'application/json; charset=utf-8' } }).then((response) => {
-            //TODO Display success
+            btn.classList.remove('icons8-circled-notch');
+            btn.classList.add('icons8-check-mark-symbol');
           }, (response) => {
-            //TODO Display error
+            btn.classList.remove('icons8-circled-notch');
+            btn.classList.add('icons8-caret-arrowhead-facing-down');
+            btn.setAttribute('disabled', false);
+            document.getElementById("errorMsg").classList.remove('hidden');
           });
         }
       },
@@ -88,6 +99,10 @@ export default {
   align-items: center;
   flex-direction: column;
   padding: 110px 20px 50px;
+
+  #errorMsg {
+    color: #e74c3c;
+  }
 
   input { 
     border-style: none; 
@@ -153,16 +168,29 @@ export default {
       }
     }
 
+    @keyframes spin { 
+      100% { transform: rotate(360deg); }
+    }
+
+
     button {
       color:  $input-text-inactive;
       font-size: 1.5rem;
       line-height: 1.5rem;
       vertical-align: middle;
       transition: color .25s;
+      cursor: pointer;
+
       &:hover {
         color: $input-text-active;
       }
     }
+
+    .icons8-circled-notch::before {
+      cursor: not-allowed;      
+      animation: spin 1.5s linear infinite;
+    }
+
   }
 
 
