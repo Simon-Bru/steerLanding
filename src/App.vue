@@ -33,7 +33,7 @@
       setTimeout(() => {
         this._self.$el.nextElementSibling.classList.value += ' loaded';
       }, 1000);
-      window.addEventListener('wheel', debounce(this.handleScroll, 100, true));
+      window.addEventListener('wheel', debounce(this.handleScroll, 200, true));
       window.addEventListener('keyup', debounce((ev) => {
         if(ev.keyCode == 38) {
           fwdTransition = false;          
