@@ -6,7 +6,7 @@
         <h1 v-html="$t('message2.title2')"></h1>
         <p v-html="$t('message2.desc2')"></p>
     </section>
-    <section>
+    <section class="frame-container">
         <ui-frame step="1"></ui-frame>
     </section>
   </div>
@@ -31,8 +31,26 @@ export default {
     padding-bottom: 20px;
     height:100%;
 
+    .descContainer {
+        margin-left: 20%;
+    }
+
     ui-frame {
         text-align: left;
     }
+}
+
+
+
+@media screen and (max-width: 850px) {
+    #plan {
+        grid-template-columns: 1fr 250px;
+
+        .frame-container {
+            padding-right: 20%;
+        }
+
+    }
+
 }
 </style>

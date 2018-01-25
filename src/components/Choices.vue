@@ -52,7 +52,7 @@ export default {
         text-align: left;
 
         label {
-            font-size: 16px;
+            font-size: 3vh;
             padding-bottom: 2px;
         }
 

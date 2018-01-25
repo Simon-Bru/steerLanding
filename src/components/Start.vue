@@ -1,6 +1,6 @@
 <template>
   <div id="start" class="wrapper">
-      <section>
+      <section class="frame-container">
         <ui-frame step="0"></ui-frame>
       </section>
       <section class="descContainer">
@@ -32,5 +32,27 @@ export default {
     padding-bottom: 20px;
     height:100%;
     text-align: right;
+}
+
+@media screen and (max-width: 850px) {
+    #start {
+        grid-template-columns: 300px 1fr;
+
+        .frame-container {
+            padding-left: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #start {
+        .descContainer {
+            margin-right: 5%;
+            // width: 70%;
+        }
+        p {
+            max-width: none;
+        }
+    }
 }
 </style>
