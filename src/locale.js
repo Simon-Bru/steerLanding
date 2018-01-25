@@ -52,11 +52,11 @@ module.exports = {
         ],
         follow:
         {
-            texte1: 'interested ? ', 
-            texte2: 'Add your mail to be aware of the project and his features!',      
+            texte1: 'Interested ? ', 
+            texte2: 'Add your mail to be aware of the project\'s evolution and its features!',      
         },
         discover:   'Let\'s discover',    
-        email:      'What\'s your email ?',
+        email:      'you@JO2024.paris',
         demoList: [
             'Paris',
             'France',
@@ -121,7 +121,7 @@ module.exports = {
             texte2: 'Rensigne ton adresse mail pour être tenu au courant de notre lancement et de nos actualités!'       
         },
         discover:   'Let\'s discover',
-        email:      'Quelle est votre email ?',
+        email:      'you@JO2024.paris',
         demoList: [
             'Paris',
             'France',

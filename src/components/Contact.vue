@@ -9,7 +9,10 @@
         </ul>
       </div>
     </div>
-
+    <div style='text-align:center;width:auto;'>
+      <h1 v-html="$t('follow.texte1')"></h1>
+      <h3 v-html="$t('follow.texte2')"></h3>
+    </div>
     <div class="webflow-style-input">
       <input type="email" :placeholder="$t('email')" v-model="email" />
       <button type="submit" v-on:click='submit(email)'>
@@ -42,7 +45,6 @@ export default {
       let tl = new TimelineMax({ paused: false, repeat: -1, repeatDelay: 1 });
 
       tl.to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
-        .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
         .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 })
         .to(list, 1, { top: '+=-40px', ease: Sine.easeInOut, delay: 1 }).play();
     },
@@ -81,6 +83,7 @@ export default {
 @import "../assets/style/_colors.scss";
 
 #contact {
+  color: #fff;
   justify-content: center;
   align-items: center;
   flex-direction: column;
