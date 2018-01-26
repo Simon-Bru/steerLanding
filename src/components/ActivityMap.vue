@@ -11,31 +11,23 @@
         xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
         viewBox="0 0 80 135" 
         preserveAspectRatio="none">
-        <defs>
-            <svg:style type="text/css">
-                <![CDATA[
-                    .path {stroke: #000 !important;fill: none !important;stroke-width: 1.3px;}
-                ]]>
-            </svg:style>
-        </defs>
-
 
         <polyline id="path1" class="path"
-        points="24, 66 30, 68 29, 80" 
-        v-if="activityNb > 0"></polyline>
+            points="24, 66 30, 68 29, 80" 
+            v-if="activityNb > 0"></polyline>
 
         <polyline id="path2" class="path"
-        points="29, 80 30, 65 33, 59 46, 55 50, 47 56, 52 60, 55 63, 56"
-        v-if="activityNb > 2"></polyline>
+            points="29, 80 30, 65 33, 59 46, 55 50, 47 56, 52 60, 55 63, 56"
+            v-if="activityNb > 2"></polyline>
 
         <polyline id="path3" class="path"
-        points="57, 53 61, 44 50, 39 43, 41"
-        v-if="activityNb > 3"></polyline>
+            points="57, 53 61, 44 50, 39 43, 41"
+            v-if="activityNb > 3"></polyline>
 
         <!-- Points -->
-        <circle cx="29" cy="80" r="1.5" fill="red" v-if="activityNb > 0"/>
-        <circle cx="63" cy="56" r="1.5" fill="red" v-if="activityNb > 2"/>
-        <circle cx="43" cy="41" r="1.5" fill="red" v-if="activityNb > 3"/>
+        <circle cx="29" cy="80" r="1.5" v-if="activityNb > 0" class="place"/>
+        <circle cx="63" cy="56" r="1.5" v-if="activityNb > 2" class="place"/>
+        <circle cx="43" cy="41" r="1.5" v-if="activityNb > 3" class="place"/>
     </svg>
 
     <i  class="icons8-location-marker marker" 
@@ -209,7 +201,7 @@ export default {
         height: 100%;
 
             .path {
-                stroke: #000;
+                stroke: $black;
                 fill: none;
                 stroke-width: 1.3px;
                 stroke-dasharray: 100;
@@ -217,6 +209,9 @@ export default {
                 animation: dash 2s linear forwards;
 
             }
+
+            .place { fill: $pink; }
+
     }
 
 

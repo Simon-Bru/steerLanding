@@ -70,9 +70,11 @@ export default {
         flex-wrap: wrap;
         flex-flow: row wrap;
         margin-top: 10%;
+        height: 60%;
 
         span {
             width: 25%;
+            height: 25%;
 
             margin: 3% 3% 3% 3%;
             justify-content: center;
