@@ -40,7 +40,7 @@ export default {
     max-width: 100vw;
 
     .ui-frame {
-        display:inline-block;
+        display: inline-block;
         height: 100%;
         text-align: center;
 

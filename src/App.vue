@@ -6,7 +6,6 @@
     </video>
     
     <template
-      class=""
       v-if="isMobile">
       <div class="full-fixed dark-bg"></div>
       <start></start>

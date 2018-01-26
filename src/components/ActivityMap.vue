@@ -1,6 +1,6 @@
 <template>
   <div id="map">
-    <i class="material-icons">menu</i>
+    <i class="icons8-menu"></i>
 
     <span id="localization" class="flex">
         <span class="dot"></span>
@@ -34,8 +34,14 @@
         :id="markerId"></i>
 
     <div id='activityContainer'>
-        <div class="button flex" id="no"><span v-html="$t('no')"></span><i class="icons8-no"></i></div>
-        <div class="button flex" id="yes"><span v-html="$t('yes')"></span><i class="icons8-love"></i></div>
+        <div class="button flex" id="no">
+            <i class="icons8-no"></i>
+            <span v-html="$t('no')"></span>
+        </div>
+        <div class="button flex" id="yes">
+            <i class="icons8-love"></i>
+            <span v-html="$t('yes')"></span>
+        </div>
 
         <activity   v-for="(activity, index) in activities" 
                     :key="activity.name" 
