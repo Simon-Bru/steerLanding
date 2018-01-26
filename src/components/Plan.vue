@@ -46,10 +46,6 @@ export default {
     #plan {
         grid-template-columns: 1fr 250px;
 
-        .frame-container {
-            padding-right: 20%;
-        }
-
     }
 
 }

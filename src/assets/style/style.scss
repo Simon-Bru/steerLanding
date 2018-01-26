@@ -15,6 +15,10 @@ body {
     font-family: 'Champagne';
 }
 
+body.overflowed {
+    overflow: visible !important;
+}
+
 #contrast{
     font-style: oblique;
     opacity: 0.7;
@@ -75,13 +79,7 @@ p {
 }
 
 @media screen and (max-width: 700px) {
-    body {
-        overflow: hidden;
-    }
-    body.overflowed {
-        overflow: visible !important;
-    }
-    
+     
     .wrapper {
         position: relative;
         grid-template-columns: 1fr !important;

@@ -32,15 +32,16 @@ export default {
     padding-bottom: 20px;
     height:100%;
     text-align: right;
+
+    // .ui-frame {
+    //     float: right;
+    // }
 }
 
 @media screen and (max-width: 850px) {
     #start {
         grid-template-columns: 300px 1fr;
 
-        .frame-container {
-            padding-left: 20%;
-        }
     }
 }
 
