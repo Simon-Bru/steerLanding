@@ -15,11 +15,16 @@
     </div>
     <div class="webflow-style-input">
       <input type="email" :placeholder="$t('email')" v-model="email" />
-      <button type="submit" v-on:click='submit(email)'>
-        <i class="icons8-caret-arrowhead-facing-down" id="buttonIcon"></i>
+      <button type="submit" v-on:click='submit(email)' :disabled="submitted">
+        <i id="buttonIcon" 
+        :class="{ 
+          'icons8-caret-arrowhead-facing-down': !submitted && !loading,
+          'icons8-circled-notch': submitted && loading,
+          'icons8-check-mark-symbol': submitted && !loading
+        }"></i>
       </button>
     </div>
-    <small class="hidden" id="errorMsg" v-html="$t('error')"></small>
+    <small id="errorMsg" v-html="$t('error')" v-if="error"></small>
   </section>
 </template>
 
@@ -37,7 +42,10 @@ export default {
 
       return { 
         items: itemsArray,
-        email: ''
+        email: '',
+        submitted: false,
+        loading: false,
+        error: false
       };
     },
     mounted: function() {
@@ -51,23 +59,19 @@ export default {
     },
     methods: {
       submit: function(email) {
-        const btn = document.getElementById('buttonIcon');
-        btn.setAttribute('disabled', true);
-
-        btn.classList.remove('icons8-caret-arrowhead-facing-down');
-        btn.classList.add('icons8-circled-notch');
+        this.loading = true;
+        this.submitted = true;
+        this.error = false;
 
         // TODO validate mail
         if(email !== null && email) {
           this.$http.post('subscribe', { email: email },
           { headers: { 'X-CSRF-Token': this.getCookie('XSRF-TOKEN'), 'Content-Type': 'application/json; charset=utf-8' } }).then((response) => {
-            btn.classList.remove('icons8-circled-notch');
-            btn.classList.add('icons8-check-mark-symbol');
+            this.loading = false;
           }, (response) => {
-            btn.classList.remove('icons8-circled-notch');
-            btn.classList.add('icons8-caret-arrowhead-facing-down');
-            btn.setAttribute('disabled', false);
-            document.getElementById("errorMsg").classList.remove('hidden');
+            this.loading = false;
+            this.submitted = false;
+            this.error = true;
           });
         }
       },
@@ -115,7 +119,6 @@ export default {
     background: none; 
     border: none; 
     outline: none; 
-    transform: rotate(-90deg);
   }
 
   // colors
@@ -190,6 +193,15 @@ export default {
       cursor: not-allowed;      
       animation: spin 1.5s linear infinite;
     }
+
+    .icons8-caret-arrowhead-facing-down {
+      transform: rotate(-90deg);
+    }
+
+    .icons8-circled-notch {
+      transform: rotate(0deg);      
+    }
+    
 
   }
 
