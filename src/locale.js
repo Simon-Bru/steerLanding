@@ -52,8 +52,8 @@ module.exports = {
         ],
         follow:
         {
-            texte1: 'Interested ? ', 
-            texte2: 'Add your mail to be aware of the project\'s evolution and its features!',      
+            texte1: 'Would you like to be part of the Steer adventure ? ', 
+            texte2: 'Add your mail and be the first to try the app !',
         },
         discover:   'Let\'s discover',    
         email:      'you@JO2024.paris',
@@ -118,8 +118,8 @@ module.exports = {
         ],
         follow:
         {
-            texte1: 'Tu t\'imagines déjà avec Steer dans les rues parisiennes?', 
-            texte2: 'Rensigne ton adresse mail pour être tenu au courant de notre lancement et de nos actualités!'       
+            texte1: 'Souhaitez vous participer à l\'aventure Steer ? ', 
+            texte2: 'Inscrivez-vous et testez l\'application en avant première !'       
         },
         discover:   'Let\'s discover',
         email:      'you@JO2024.paris',

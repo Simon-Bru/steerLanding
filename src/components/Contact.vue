@@ -9,7 +9,7 @@
         </ul>
       </div>
     </div>
-    <div style='text-align:center;width:auto;'>
+    <div style='text-align:center;width:auto;margin-top: 20px; margin-bottom: 20px;'>
       <h1 v-html="$t('follow.texte1')"></h1>
       <h3 v-html="$t('follow.texte2')"></h3>
     </div>
@@ -194,7 +194,7 @@ export default {
       animation: spin 1.5s linear infinite;
     }
 
-    .icons8-caret-arrowhead-facing-down {
+    .icons8-caret-arrowhead-facing-down::before {
       transform: rotate(-90deg);
     }
 

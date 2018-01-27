@@ -97,4 +97,10 @@ export default {
 
     }
 }
+
+@media screen and (max-width: 700px) {
+    label {
+        font-size: 20px !important;
+    }
+}
 </style>

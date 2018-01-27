@@ -90,9 +90,9 @@ export default {
         { opacity: '0.2' }).play();
 
 
-        let tweenline = new TimelineMax({paused: true});
+        let tweenline = new TimelineMax({paused: true, repeat: -1, repeatDelay: 3.5 });
 
-        tweenline.to(document.getElementById(4+this.uniqueId), .5, 
+        let MainAnimation = tweenline.to(document.getElementById(4+this.uniqueId), .5, 
             { left: '100%', ease: Back.easeIn, delay: 2, onComplete: this.nextActivity })
         .to(document.getElementById(3+this.uniqueId), .5, 
             { right: '100%', ease: Back.easeIn, delay: 1.5, onComplete: this.nextActivity })
@@ -124,6 +124,11 @@ export default {
                     case 4: 
                         marker.style.top = '21%';
                         marker.style.left = '76%';
+                        setTimeout(() => {
+                            this.activityNb = 0;
+                            marker.style.top = '52%';
+                            marker.style.left = '34%';
+                        }, 3500);
                     break;
                 }
             }
