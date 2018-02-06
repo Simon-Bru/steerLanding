@@ -15,7 +15,7 @@ Vue.use(VueResource);
 Vue.http.options.root = window.location.origin;
 
 const i18n = new VueI18n({
-  locale: window.navigator.language == 'fr' ? 'fr' : 'en',
+  locale: window.navigator.language.includes('fr') ? 'fr' : 'en',
   messages
 });
 
