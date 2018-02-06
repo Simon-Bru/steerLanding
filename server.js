@@ -74,8 +74,8 @@ app.post('/subscribe', (req, res) => {
             console.log(err);
           }
           const rBody = JSON.parse(response.body);
-          
-          if (rBody.status < 300 || (rBody.status === 400 && rBody.title === "Member Exists")) {
+
+          if (rBody.status === 'subscribed' || (rBody.status === 400 && rBody.title === "Member Exists")) {
             res.sendStatus(200);
           } else {
             console.log(rBody);
