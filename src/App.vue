@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <video autoplay muted loop id="Parisvideo">
+    <video autoplay muted loop id="Parisvideo" playsinline>
       <source ref='videoRef' :src="video_bg" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
@@ -169,7 +169,7 @@
     min-width: 100%; 
     min-height: 100%;
     background: url('./assets/images/paris-bg.jpg');
-    
+    background-position: center;
     // -webkit-filter: blur(2px);
     // -moz-filter: blur(2px);
     // -o-filter: blur(2px);
