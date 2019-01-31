@@ -7,9 +7,11 @@ const fs                    = require('fs'),
       cookieParser          = require('cookie-parser');
 
 // Mail chimp variables
-const mailchimpInstance = 'us17',
-      mailchimpApiKey   = 'b74565d00af3ec7a90d7d0e656b70bdc-us17';
-      listUniqueId      = 'c23d0f0093';
+const mailchimpInstance = process.env.MC_INSTANCE || 'us17',
+      mailchimpApiKey   = process.env.MC_API_KEY || '';
+      listUniqueId      = process.env.MC_UNIQUE_ID || '',
+      port = process.env.PORT || 8080;
+
 
 const bundleRenderer = createBundleRenderer(
   // Load the SSR bundle with require.
@@ -88,4 +90,4 @@ app.post('/subscribe', (req, res) => {
 });
 
 // Bind the app to this port.
-app.listen(8080);
+app.listen(port);
